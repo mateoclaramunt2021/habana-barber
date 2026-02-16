@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Habana BarberShop Castelldefels — Cortes, barba, cejas y estilo masculino. 5★ en Google. Carrer d'Arcadi Balaguer 69. Reserva tu cita.">
+    <meta name="theme-color" content="#1C1C1C">
+    <title>Habana BarberShop | Castelldefels — Barbería Premium</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+    <!-- ===== LOADER ===== -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+            <span class="loader-text">BARBERÍA HABANA</span>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- ===== NAVEGACIÓN ===== -->
+    <header id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">✂</span>
+                <div class="logo-text">
+                    <span class="logo-main">HABANA</span>
+                    <span class="logo-sub">BARBERÍA</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link active">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#galeria" class="nav-link">Galería</a>
+                <a href="#opiniones" class="nav-link">Opiniones</a>
+                <a href="#reservar" class="nav-link">Reservar</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+            <a href="#reservar" class="nav-cta">Reservar Cita</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <span class="badge-line"></span>
+                <span>CASTELLDEFELS • 5★ GOOGLE • BARBERÍA PREMIUM</span>
+                <span class="badge-line"></span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up">
+                <span class="hero-title-line">BARBERÍA</span>
+                <span class="hero-title-accent">HABANA</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-delay="200">
+                Crear tu estilo es nuestra pasión. Cortes, barba y tratamientos
+                con la mejor atención en Castelldefels.
+            </p>
+            <div class="hero-actions" data-aos="fade-up" data-delay="400">
+                <a href="#reservar" class="btn btn-primary btn-lg">
+                    <i data-lucide="calendar" class="btn-icon"></i>
+                    Reservar Ahora
+                </a>
+                <a href="#servicios" class="btn btn-outline btn-lg">
+                    Explorar Servicios
+                </a>
+            </div>
+            <div class="hero-stats" data-aos="fade-up" data-delay="600">
+                <div class="stat">
+                    <span class="stat-number" data-count="74">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Reseñas en Google</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">5.0</span><span class="stat-plus">★</span>
+                    <span class="stat-label">Valoración Media</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="58">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Reseñas en Booksy</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#servicios" class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>✂ CORTE CLÁSICO</span>
+                <span>✂ DISEÑO ARTÍSTICO</span>
+                <span>✂ BARBA PROFESIONAL</span>
+                <span>✂ CEJAS</span>
+                <span>✂ DECOLORACIÓN</span>
+                <span>✂ RAPADO</span>
+                <span>✂ CORTE CLÁSICO</span>
+                <span>✂ DISEÑO ARTÍSTICO</span>
+                <span>✂ BARBA PROFESIONAL</span>
+                <span>✂ CEJAS</span>
+                <span>✂ DECOLORACIÓN</span>
+                <span>✂ RAPADO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section id="servicios" class="section services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Servicios <em>Premium</em></h2>
+                <p class="section-desc">Cada servicio es una experiencia única, diseñada para resaltar tu mejor versión.</p>
+            </div>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section id="nosotros" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images" data-aos="fade-right">
+                    <div class="about-img-main">
+                        <div class="img-placeholder">
+                            <i data-lucide="scissors" style="width:64px;height:64px;"></i>
+                            <span>Barbería Habana</span>
+                        </div>
+                    </div>
+                    <div class="about-img-secondary">
+                        <div class="img-placeholder small">
+                            <i data-lucide="award" style="width:40px;height:40px;"></i>
+                            <span>Desde 2026</span>
+                        </div>
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="exp-number">5+</span>
+                        <span class="exp-text">Años de<br>Experiencia</span>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-tag">Sobre Nosotros</span>
+                    <h2 class="section-title">Más que una barbería,<br><em>una experiencia</em></h2>
+                    <p class="about-text">
+                        En <strong>Barbería Habana</strong> combinamos la tradición clásica del oficio con las tendencias más actuales. Cada corte es una obra de arte personalizada, cada visita una experiencia que recordarás.
+                    </p>
+                    <p class="about-text">
+                        Nuestro equipo de barberos profesionales está dedicado a que salgas sintiéndote la mejor versión de ti mismo. Ambiente moderno con toques vintage, materiales nobles como la madera y el mármol, y una atención al detalle milimétrica.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon"><i data-lucide="check-circle"></i></div>
+                            <div>
+                                <strong>Profesionalidad</strong>
+                                <p>Barberos certificados con formación continua</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon"><i data-lucide="check-circle"></i></div>
+                            <div>
+                                <strong>Puntualidad</strong>
+                                <p>Muy pocas cancelaciones — respetamos tu tiempo</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon"><i data-lucide="check-circle"></i></div>
+                            <div>
+                                <strong>Productos Premium</strong>
+                                <p>Trabajamos con las mejores marcas del mercado</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#reservar" class="btn btn-primary">
+                        <i data-lucide="calendar" class="btn-icon"></i>
+                        Reservar Cita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section id="galeria" class="section gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Galería</span>
+                <h2 class="section-title">Nuestro <em>Trabajo</em></h2>
+                <p class="section-desc">Cada corte cuenta una historia. Estos son algunos de nuestros trabajos.</p>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up">
+                <div class="gallery-item large">
+                    <div class="img-placeholder gallery-ph"><i data-lucide="scissors"></i><span>Corte Clásico</span></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder gallery-ph"><i data-lucide="sparkles"></i><span>Diseño</span></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder gallery-ph"><i data-lucide="user"></i><span>Barba</span></div>
+                </div>
+                <div class="gallery-item tall">
+                    <div class="img-placeholder gallery-ph"><i data-lucide="star"></i><span>Premium</span></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder gallery-ph"><i data-lucide="zap"></i><span>Rapado</span></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="img-placeholder gallery-ph"><i data-lucide="sun"></i><span>Color</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OPINIONES ===== -->
+    <section id="opiniones" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Opiniones</span>
+                <h2 class="section-title">Lo que dicen <em>nuestros clientes</em></h2>
+            </div>
+            <div class="testimonials-grid" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Excelente atención y gran servicio. El peluquero es experto en su gremio y cumplirá excelentemente con la encomienda."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">E</div>
+                        <div>
+                            <strong>Eriksito</strong>
+                            <span>Reseña de Google — 5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Profesionalidad, cortes perfectos y un precio inmejorable, volveré."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">O</div>
+                        <div>
+                            <strong>Orlando Arias</strong>
+                            <span>Reseña de Google — 5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Fui con el pelo destrozado y Andy hizo magia, muy contento con el trabajo."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div>
+                            <strong>Jorge Burdio</strong>
+                            <span>Reseña de Google — 5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Andy super buena gente, atiende muy bien, hace un trabajo impecable muy bueno, super recomendado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">G</div>
+                        <div>
+                            <strong>Gabriel Casadiego</strong>
+                            <span>Reseña de Google — 5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Corte perfecto y chicos muy simpáticos 👌"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div>
+                            <strong>Jon Holland</strong>
+                            <span>Reseña de Google — 5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Saben lo que hacen y te dan un buen servicio, ¡muchas gracias!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <strong>Abelardo</strong>
+                            <span>Reseña de Google — 5/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESERVAR ===== -->
+    <section id="reservar" class="section booking-section">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info" data-aos="fade-right">
+                    <span class="section-tag">Reserva tu cita</span>
+                    <h2 class="section-title">Reserva tu <em>experiencia</em></h2>
+                    <p>Selecciona el servicio, tu barbero favorito, fecha y hora. En menos de un minuto tendrás tu cita confirmada.</p>
+                    <div class="booking-benefits">
+                        <div class="benefit">
+                            <i data-lucide="clock"></i>
+                            <span>Confirmación inmediata</span>
+                        </div>
+                        <div class="benefit">
+                            <i data-lucide="shield-check"></i>
+                            <span>Sin compromiso de cancelación</span>
+                        </div>
+                        <div class="benefit">
+                            <i data-lucide="bell"></i>
+                            <span>Recordatorio antes de tu cita</span>
+                        </div>
+                        <div class="benefit">
+                            <i data-lucide="smile"></i>
+                            <span>Satisfacción garantizada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-form-card" data-aos="fade-left">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-step active" data-step="1">
+                            <h3 class="form-step-title">1. Elige servicio</h3>
+                            <div class="service-selector" id="serviceSelector">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                        <div class="form-step" data-step="2">
+                            <h3 class="form-step-title">2. Elige barbero</h3>
+                            <div class="worker-selector" id="workerSelector">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                        <div class="form-step" data-step="3">
+                            <h3 class="form-step-title">3. Fecha y hora</h3>
+                            <div class="form-group">
+                                <label>Fecha</label>
+                                <input type="date" id="bookingDate" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Hora disponible</label>
+                                <div class="time-slots" id="timeSlots">
+                                    <p class="slots-hint">Selecciona una fecha para ver horarios disponibles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step" data-step="4">
+                            <h3 class="form-step-title">4. Tus datos</h3>
+                            <div class="form-group">
+                                <label>Nombre completo</label>
+                                <input type="text" id="bookingName" class="form-input" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" id="bookingPhone" class="form-input" placeholder="+34 600 000 000" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email (opcional)</label>
+                                <input type="email" id="bookingEmail" class="form-input" placeholder="tu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Notas (opcional)</label>
+                                <textarea id="bookingNotes" class="form-input" placeholder="¿Algo que debamos saber?" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Resumen -->
+                        <div class="booking-summary" id="bookingSummary" style="display:none;">
+                            <h3>Resumen de tu reserva</h3>
+                            <div class="summary-details" id="summaryDetails"></div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-outline btn-sm" id="prevStep" style="display:none;">
+                                <i data-lucide="arrow-left" class="btn-icon"></i> Anterior
+                            </button>
+                            <button type="button" class="btn btn-primary btn-sm" id="nextStep">
+                                Siguiente <i data-lucide="arrow-right" class="btn-icon"></i>
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-sm" id="submitBooking" style="display:none;">
+                                <i data-lucide="check" class="btn-icon"></i> Confirmar Reserva
+                            </button>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="form-progress">
+                            <div class="progress-step active" data-step="1">1</div>
+                            <div class="progress-line"></div>
+                            <div class="progress-step" data-step="2">2</div>
+                            <div class="progress-line"></div>
+                            <div class="progress-step" data-step="3">3</div>
+                            <div class="progress-line"></div>
+                            <div class="progress-step" data-step="4">4</div>
+                        </div>
+                    </form>
+
+                    <!-- Success message -->
+                    <div id="bookingSuccess" class="booking-success" style="display:none;">
+                        <div class="success-icon"><i data-lucide="check-circle"></i></div>
+                        <h3>¡Reserva Confirmada!</h3>
+                        <p>Te esperamos en Barbería Habana. Recibirás un recordatorio antes de tu cita.</p>
+                        <button class="btn btn-primary" onclick="resetBookingForm()">Hacer otra reserva</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>¿Listo para tu próximo corte?</h2>
+                <p>No esperes más. Reserva ahora y descubre por qué somos la barbería preferida.</p>
+                <div class="cta-actions">
+                    <a href="#reservar" class="btn btn-primary btn-lg">
+                        <i data-lucide="calendar" class="btn-icon"></i>
+                        Reservar Ahora
+                    </a>
+                    <a href="https://wa.me/34631040925?text=Hola,%20quiero%20reservar%20una%20cita%20en%20Habana%20BarberShop" target="_blank" class="btn btn-whatsapp btn-lg">
+                        <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    WhatsApp
+                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-tag">Contacto</span>
+                    <h2 class="section-title">Encuéntranos</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <strong>Dirección</strong>
+                                <p>Carrer d'Arcadi Balaguer, 69, 08860 Castelldefels, Barcelona</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i data-lucide="phone"></i></div>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <p><a href="tel:+34631040925">631 04 09 25</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i data-lucide="at-sign"></i></div>
+                            <div>
+                                <strong>Instagram</strong>
+                                <p><a href="https://instagram.com/habana_barberia" target="_blank">@habana_barberia</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i data-lucide="clock"></i></div>
+                            <div>
+                                <strong>Horario</strong>
+                                <p>Lunes a Sábado: 10:00 — 20:00</p>
+                                <p>Domingo: Cerrado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" data-aos="fade-left">
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.8!2d1.9766!3d41.2641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCarrer+d%27Arcadi+Balaguer+69+Castelldefels!5e0!3m2!1ses!2ses!4v1700000000" width="100%" height="400" style="border:0;border-radius:20px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo footer-logo">
+                        <span class="logo-icon">✂</span>
+                        <div class="logo-text">
+                            <span class="logo-main">HABANA</span>
+                            <span class="logo-sub">BARBERÍA</span>
+                        </div>
+                    </div>
+                    <p>Crear tu estilo es nuestra pasión. Cortes, barba y tratamientos premium en Castelldefels.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/habana_barberia" target="_blank" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="https://www.tiktok.com/@habana_barberia" target="_blank" class="social-link" aria-label="TikTok"><i data-lucide="video"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Navegación</h4>
+                    <a href="#hero">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#galeria">Galería</a>
+                    <a href="#opiniones">Opiniones</a>
+                    <a href="#reservar">Reservar</a>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Servicios</h4>
+                    <a href="#servicios">Corte</a>
+                    <a href="#servicios">Corte con Diseño</a>
+                    <a href="#servicios">Corte y Barba</a>
+                    <a href="#servicios">Rapado</a>
+                    <a href="#servicios">Decoloración</a>
+                    <a href="#servicios">Cejas</a>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Horario</h4>
+                    <p>L-S: 10:00 — 20:00</p>
+                    <p>Dom: Cerrado</p>
+                    <a href="#reservar" class="btn btn-primary btn-sm" style="margin-top:1rem;">Reservar</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barbería Habana. Todos los derechos reservados.</p>
+                <a href="admin.html" class="admin-link" title="Acceso administrador">
+                    <i data-lucide="lock" style="width:12px;height:12px;"></i> Administración
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WhatsApp Float ===== -->
+    <a href="https://wa.me/34631040925?text=Hola,%20quiero%20reservar%20una%20cita%20en%20Habana%20BarberShop" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin — Barbería Habana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- ===== LOGIN SCREEN ===== -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <span class="login-icon">✂</span>
+                <h1>BARBERÍA HABANA</h1>
+                <p>Panel de Administración</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="login-group">
+                    <label>Usuario</label>
+                    <input type="text" id="loginUser" placeholder="admin" required autofocus>
+                </div>
+                <div class="login-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="loginPass" placeholder="••••••••" required>
+                </div>
+                <p class="login-error" id="loginError" style="display:none;">Usuario o contraseña incorrectos</p>
+                <button type="submit" class="login-btn">Acceder</button>
+            </form>
+            <a href="index.html" class="login-back"><i data-lucide="arrow-left"></i> Volver a la web</a>
+        </div>
+    </div>
+
+    <!-- ===== ADMIN PANEL ===== -->
+    <div id="adminPanel" class="admin-panel" style="display:none;">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">✂</span>
+                <div>
+                    <h2>HABANA</h2>
+                    <small>Panel Admin</small>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="dashboard">
+                    <i data-lucide="layout-dashboard"></i><span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="reservas">
+                    <i data-lucide="calendar-check"></i><span>Reservas</span>
+                    <span class="sidebar-badge" id="reservasBadge" style="display:none;">0</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="calendario">
+                    <i data-lucide="calendar-days"></i><span>Calendario</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="clientes">
+                    <i data-lucide="users"></i><span>Clientes</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="trabajadores">
+                    <i data-lucide="hard-hat"></i><span>Trabajadores</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="servicios">
+                    <i data-lucide="scissors"></i><span>Servicios</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="tpv">
+                    <i data-lucide="credit-card"></i><span>TPV</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="informes">
+                    <i data-lucide="bar-chart-3"></i><span>Informes</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="notificaciones">
+                    <i data-lucide="bell"></i><span>Notificaciones</span>
+                    <span class="sidebar-badge" id="notifBadge" style="display:none;">0</span>
+                </a>
+                <a href="#" class="sidebar-link" data-page="configuracion">
+                    <i data-lucide="settings"></i><span>Configuración</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="sidebar-logout" id="logoutBtn">
+                    <i data-lucide="log-out"></i><span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <button class="topbar-toggle" id="sidebarToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div class="topbar-search">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Buscar..." id="globalSearch">
+                </div>
+                <div class="topbar-actions">
+                    <button class="topbar-btn" id="notifBtn" title="Notificaciones">
+                        <i data-lucide="bell"></i>
+                        <span class="topbar-badge" id="topNotifBadge" style="display:none;">0</span>
+                    </button>
+                    <div class="topbar-user">
+                        <div class="user-avatar">A</div>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Pages Container -->
+            <div class="pages-container">
+
+                <!-- ===== DASHBOARD ===== -->
+                <div class="page active" id="page-dashboard">
+                    <div class="page-header">
+                        <h1>Dashboard</h1>
+                        <p class="page-date" id="dashboardDate"></p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-icon blue"><i data-lucide="calendar-check"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-value" id="statBookingsToday">0</span>
+                                <span class="stat-card-label">Citas Hoy</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-icon green"><i data-lucide="euro"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-value" id="statRevenueToday">0€</span>
+                                <span class="stat-card-label">Ingresos Hoy</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-icon amber"><i data-lucide="users"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-value" id="statTotalClients">0</span>
+                                <span class="stat-card-label">Total Clientes</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-icon red"><i data-lucide="clock"></i></div>
+                            <div class="stat-card-info">
+                                <span class="stat-card-value" id="statPending">0</span>
+                                <span class="stat-card-label">Pendientes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dash-card">
+                            <div class="dash-card-header">
+                                <h3>Próximas Citas</h3>
+                                <a href="#" class="dash-card-link" data-goto="reservas">Ver todas</a>
+                            </div>
+                            <div class="dash-card-body" id="dashUpcoming">
+                                <p class="empty-state">No hay citas próximas</p>
+                            </div>
+                        </div>
+                        <div class="dash-card">
+                            <div class="dash-card-header">
+                                <h3>Resumen del Día</h3>
+                            </div>
+                            <div class="dash-card-body" id="dashDaySummary">
+                                <p class="empty-state">Sin actividad hoy</p>
+                            </div>
+                        </div>
+                        <div class="dash-card full-width">
+                            <div class="dash-card-header">
+                                <h3>Últimas Notificaciones</h3>
+                                <a href="#" class="dash-card-link" data-goto="notificaciones">Ver todas</a>
+                            </div>
+                            <div class="dash-card-body" id="dashNotifications">
+                                <p class="empty-state">Sin notificaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== RESERVAS ===== -->
+                <div class="page" id="page-reservas">
+                    <div class="page-header">
+                        <h1>Reservas</h1>
+                        <button class="btn-admin btn-primary-admin" id="newBookingBtn">
+                            <i data-lucide="plus"></i> Nueva Reserva
+                        </button>
+                    </div>
+                    <div class="filters-bar">
+                        <div class="filter-tabs" id="bookingFilters">
+                            <button class="filter-tab active" data-filter="all">Todas</button>
+                            <button class="filter-tab" data-filter="pending">Pendientes</button>
+                            <button class="filter-tab" data-filter="confirmed">Confirmadas</button>
+                            <button class="filter-tab" data-filter="completed">Completadas</button>
+                            <button class="filter-tab" data-filter="cancelled">Canceladas</button>
+                        </div>
+                        <input type="date" class="filter-date" id="bookingFilterDate">
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table" id="bookingsTable">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Servicio</th>
+                                    <th>Barbero</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookingsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ===== CALENDARIO ===== -->
+                <div class="page" id="page-calendario">
+                    <div class="page-header">
+                        <h1>Calendario</h1>
+                        <div class="cal-nav">
+                            <button class="btn-icon-admin" id="calPrev"><i data-lucide="chevron-left"></i></button>
+                            <span id="calTitle" class="cal-title">Febrero 2026</span>
+                            <button class="btn-icon-admin" id="calNext"><i data-lucide="chevron-right"></i></button>
+                            <button class="btn-admin btn-outline-admin" id="calToday">Hoy</button>
+                        </div>
+                    </div>
+                    <div class="calendar-views">
+                        <button class="cal-view-btn active" data-view="month">Mes</button>
+                        <button class="cal-view-btn" data-view="week">Semana</button>
+                        <button class="cal-view-btn" data-view="day">Día</button>
+                    </div>
+                    <div class="calendar-container" id="calendarContainer"></div>
+                </div>
+
+                <!-- ===== CLIENTES ===== -->
+                <div class="page" id="page-clientes">
+                    <div class="page-header">
+                        <h1>Clientes</h1>
+                        <button class="btn-admin btn-primary-admin" id="newClientBtn">
+                            <i data-lucide="plus"></i> Nuevo Cliente
+                        </button>
+                    </div>
+                    <div class="filters-bar">
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" placeholder="Buscar cliente..." id="clientSearch">
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Teléfono</th>
+                                    <th>Email</th>
+                                    <th>Visitas</th>
+                                    <th>Total Gastado</th>
+                                    <th>Última Visita</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ===== TRABAJADORES ===== -->
+                <div class="page" id="page-trabajadores">
+                    <div class="page-header">
+                        <h1>Trabajadores</h1>
+                        <button class="btn-admin btn-primary-admin" id="newWorkerBtn">
+                            <i data-lucide="plus"></i> Nuevo Trabajador
+                        </button>
+                    </div>
+                    <div class="workers-grid" id="workersGrid"></div>
+                </div>
+
+                <!-- ===== SERVICIOS ===== -->
+                <div class="page" id="page-servicios">
+                    <div class="page-header">
+                        <h1>Servicios</h1>
+                        <button class="btn-admin btn-primary-admin" id="newServiceBtn">
+                            <i data-lucide="plus"></i> Nuevo Servicio
+                        </button>
+                    </div>
+                    <div class="services-admin-grid" id="servicesAdminGrid"></div>
+                </div>
+
+                <!-- ===== TPV ===== -->
+                <div class="page" id="page-tpv">
+                    <div class="page-header">
+                        <h1>TPV — Punto de Venta</h1>
+                    </div>
+                    <div class="tpv-layout">
+                        <div class="tpv-services">
+                            <h3>Servicios</h3>
+                            <div class="tpv-service-grid" id="tpvServices"></div>
+                        </div>
+                        <div class="tpv-checkout">
+                            <h3>Ticket</h3>
+                            <div class="tpv-ticket" id="tpvTicket">
+                                <p class="empty-state">Añade servicios al ticket</p>
+                            </div>
+                            <div class="tpv-total">
+                                <span>TOTAL</span>
+                                <span id="tpvTotal">0,00€</span>
+                            </div>
+                            <div class="tpv-customer">
+                                <input type="text" placeholder="Nombre del cliente" id="tpvClientName" class="tpv-input">
+                                <input type="tel" placeholder="Teléfono (opcional)" id="tpvClientPhone" class="tpv-input">
+                            </div>
+                            <div class="tpv-worker-select">
+                                <label>Barbero:</label>
+                                <select id="tpvWorker" class="tpv-input"></select>
+                            </div>
+                            <div class="tpv-payment-methods">
+                                <button class="tpv-pay-btn" data-method="cash">
+                                    <i data-lucide="banknote"></i> Efectivo
+                                </button>
+                                <button class="tpv-pay-btn" data-method="card">
+                                    <i data-lucide="credit-card"></i> Tarjeta
+                                </button>
+                                <button class="tpv-pay-btn" data-method="bizum">
+                                    <i data-lucide="smartphone"></i> Bizum
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tpv-history">
+                        <h3>Transacciones de Hoy</h3>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Hora</th>
+                                        <th>Cliente</th>
+                                        <th>Barbero</th>
+                                        <th>Servicios</th>
+                                        <th>Método</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tpvHistoryBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== INFORMES ===== -->
+                <div class="page" id="page-informes">
+                    <div class="page-header">
+                        <h1>Informes</h1>
+                        <div class="report-controls">
+                            <select id="reportType" class="filter-select">
+                                <option value="daily">Informe Diario</option>
+                                <option value="weekly">Informe Semanal</option>
+                                <option value="monthly">Informe Mensual</option>
+                            </select>
+                            <input type="date" id="reportDate" class="filter-date">
+                            <button class="btn-admin btn-primary-admin" id="generateReport">
+                                <i data-lucide="file-text"></i> Generar Informe
+                            </button>
+                            <button class="btn-admin btn-outline-admin" id="printReport">
+                                <i data-lucide="printer"></i> Imprimir
+                            </button>
+                        </div>
+                    </div>
+                    <div class="report-content" id="reportContent">
+                        <p class="empty-state">Selecciona la fecha y tipo de informe para generar</p>
+                    </div>
+                </div>
+
+                <!-- ===== NOTIFICACIONES ===== -->
+                <div class="page" id="page-notificaciones">
+                    <div class="page-header">
+                        <h1>Notificaciones</h1>
+                        <button class="btn-admin btn-outline-admin" id="markAllReadBtn">
+                            <i data-lucide="check-check"></i> Marcar todas leídas
+                        </button>
+                    </div>
+                    <div class="notifications-list" id="notificationsList"></div>
+                </div>
+
+                <!-- ===== CONFIGURACIÓN ===== -->
+                <div class="page" id="page-configuracion">
+                    <div class="page-header">
+                        <h1>Configuración</h1>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3><i data-lucide="building-2"></i> Datos del Negocio</h3>
+                            <form id="settingsForm">
+                                <div class="settings-group">
+                                    <label>Nombre del negocio</label>
+                                    <input type="text" id="setBizName" class="settings-input">
+                                </div>
+                                <div class="settings-group">
+                                    <label>Dirección</label>
+                                    <input type="text" id="setBizAddress" class="settings-input">
+                                </div>
+                                <div class="settings-group">
+                                    <label>Teléfono</label>
+                                    <input type="tel" id="setBizPhone" class="settings-input">
+                                </div>
+                                <div class="settings-group">
+                                    <label>Email</label>
+                                    <input type="email" id="setBizEmail" class="settings-input">
+                                </div>
+                                <div class="settings-row">
+                                    <div class="settings-group">
+                                        <label>Hora apertura</label>
+                                        <input type="time" id="setBizOpen" class="settings-input">
+                                    </div>
+                                    <div class="settings-group">
+                                        <label>Hora cierre</label>
+                                        <input type="time" id="setBizClose" class="settings-input">
+                                    </div>
+                                    <div class="settings-group">
+                                        <label>Intervalo citas (min)</label>
+                                        <input type="number" id="setBizSlot" class="settings-input" min="10" max="120" step="5">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-admin btn-primary-admin">Guardar Cambios</button>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h3><i data-lucide="share-2"></i> Redes Sociales</h3>
+                            <form id="socialForm">
+                                <div class="settings-group">
+                                    <label>Instagram</label>
+                                    <input type="url" id="setSocialIG" class="settings-input" placeholder="https://instagram.com/...">
+                                </div>
+                                <div class="settings-group">
+                                    <label>Facebook</label>
+                                    <input type="url" id="setSocialFB" class="settings-input" placeholder="https://facebook.com/...">
+                                </div>
+                                <div class="settings-group">
+                                    <label>WhatsApp</label>
+                                    <input type="tel" id="setSocialWA" class="settings-input" placeholder="+34600000000">
+                                </div>
+                                <div class="settings-group">
+                                    <label>TikTok</label>
+                                    <input type="url" id="setSocialTT" class="settings-input" placeholder="https://tiktok.com/...">
+                                </div>
+                                <button type="submit" class="btn-admin btn-primary-admin">Guardar Redes</button>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h3><i data-lucide="key-round"></i> Cambiar Contraseña</h3>
+                            <form id="passwordForm">
+                                <div class="settings-group">
+                                    <label>Contraseña actual</label>
+                                    <input type="password" id="setPassOld" class="settings-input">
+                                </div>
+                                <div class="settings-group">
+                                    <label>Nueva contraseña</label>
+                                    <input type="password" id="setPassNew" class="settings-input">
+                                </div>
+                                <div class="settings-group">
+                                    <label>Confirmar nueva contraseña</label>
+                                    <input type="password" id="setPassConfirm" class="settings-input">
+                                </div>
+                                <button type="submit" class="btn-admin btn-primary-admin">Cambiar Contraseña</button>
+                            </form>
+                        </div>
+                        <div class="settings-card danger">
+                            <h3><i data-lucide="database"></i> Datos</h3>
+                            <p>Exporta o resetea los datos del sistema.</p>
+                            <div class="settings-actions">
+                                <button class="btn-admin btn-outline-admin" id="exportDataBtn">
+                                    <i data-lucide="download"></i> Exportar Datos (JSON)
+                                </button>
+                                <button class="btn-admin btn-danger-admin" id="resetDataBtn">
+                                    <i data-lucide="trash-2"></i> Resetear Todo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /pages-container -->
+        </main>
+    </div><!-- /admin-panel -->
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay" style="display:none;">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Modal</h2>
+                <button class="modal-close" id="modalClose"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer" id="modalFooter"></div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
